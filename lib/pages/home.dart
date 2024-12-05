@@ -111,7 +111,7 @@ void _showOperationDrawer(BuildContext context, String operation) {
                 // Handle saving logic here
                 Navigator.pop(context); // Close the bottom sheet
               },
-              child: Text('Save', style: TextStyle(fontSize: 18,color: Colors.white)),
+              child: Text(operation, style: TextStyle(fontSize: 18,color: Colors.white)),
               style: ElevatedButton.styleFrom(
                 primary: Theme.of(context).primaryColor, // Use the primary color from the theme
                 padding: EdgeInsets.symmetric(vertical: 15),

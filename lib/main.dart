@@ -93,7 +93,7 @@ class MyApp extends StatelessWidget {
         body: MyHomePage(title: '',),
         bottomNavigationBar: NavigationBar(
           indicatorColor: Colors.transparent,
-
+            backgroundColor: Colors.grey[200],
           destinations: <Widget>[
             NavigationDestination(
               selectedIcon: Icon(Icons.home),
