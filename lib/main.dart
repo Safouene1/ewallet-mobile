@@ -45,8 +45,98 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: Scaffold(
+        appBar: AppBar(
+          elevation: 0,
+          backgroundColor: Colors.transparent,
+          title: const Row(
+            children: [
+              CircleAvatar(
+                backgroundImage: AssetImage('assets/images/profile.jpg'), // Replace with your profile image path
+              ),
+              SizedBox(width: 10),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Bonjour Safouen!",
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                  ),
+                  Text(
+                    "Welcome back",
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: Colors.grey,
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+          actions: [
+            IconButton(
+              icon: Badge(
+                child: Icon(
+                  Icons.notifications,
+                  color: Theme.of(context).primaryColor,
+                ),
+              ),
+              onPressed: () {},
+            ),
+          ],
+        ),
+        backgroundColor: const Color(0xFFF5F5F5),
+        body: MyHomePage(title: '',),
+        bottomNavigationBar: NavigationBar(
+          indicatorColor: Colors.transparent,
 
+          destinations: <Widget>[
+            NavigationDestination(
+              selectedIcon: Icon(Icons.home),
+              icon: Icon(Icons.home_rounded),
+              label: 'Home',
+            ),
+            NavigationDestination(
+              icon: Badge(child: Icon(Icons.credit_card_rounded)),
+              label: 'Card',
+            ),
+            NavigationDestination(
+              selectedIcon: Container(
+                width: 48.0, // Set the width as needed
+                height: 48.0, // Set the height as needed
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Theme.of(context).colorScheme.primary, // Use theme's primary color
+                ),
+                child: Icon(Icons.qr_code_scanner_rounded, color: Colors.white),
+              ),
+              icon: Container(
+                width: 68.0, // Set the width as needed
+                height: 68.0, // Set the height as needed
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Theme.of(context).colorScheme.primary, // Use theme's primary color
+                ),
+                child: Icon(Icons.qr_code_scanner_rounded, color: Colors.white),
+              ),
+              label: '',
+            ),
+            NavigationDestination(
+              selectedIcon: Icon(Icons.bar_chart),
+              icon: Icon(Icons.bar_chart_rounded),
+              label: 'Stats',
+            ),
+            NavigationDestination(
+              icon: Badge(child: Icon(Icons.supervised_user_circle_rounded)),
+              label: 'Profile',
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
