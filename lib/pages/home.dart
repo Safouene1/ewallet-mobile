@@ -339,7 +339,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       subtitle: Row(
                         children: [
                           Text(
-                            '${transaction['amount']} €', // Display amount with Euro symbol
+                            '${transaction['amount']} TND', // Display amount with Euro symbol
                             style: TextStyle(
                               fontSize: 16,
                               color: Colors.grey.shade700, // Subtitle in grey
